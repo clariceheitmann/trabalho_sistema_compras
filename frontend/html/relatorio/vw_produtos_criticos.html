@@ -1,26 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <title>Sistema de Compras</title>
-<link rel="stylesheet" href="../../css/principal.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/principal.css">
+    <script src="../../js/relatorio/vw_produtos_criticos.js" defer></script>
+    <title>Sistema compras</title>
 </head>
-<body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <h2>🎵 Music Store</h2>
-        <ul>
-            <li><a href="../../index.html">Início</a></li>
+<body>
+    <main>
+        <nav>
+            <a href="../../index.html">Principal</a>
             <li><a href="./vw_produtos_criticos.html">Produtos Críticos</a></li>
             <li><a href="./vw_volume_compras.html">Volume de Compras</a></li>
-        </ul>
-    </nav>
+        </nav>
 
-    <!-- CONTEÚDO -->
-    <div class="container">
-        <h1>viwe produto criticos</h1>
-    </div>
+        <form>
+            <h1>Listar Produtos Críticos</h1>
+        </form>
 
+        <br>
+
+        <section>
+            <button id="btn_listar">Listar</button>
+        </section>
+
+        <div id="resposta" class="resposta"></div>
+    </main>
 </body>
+
 </html>

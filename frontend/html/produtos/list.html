@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Sistema de Compras</title>
-<link rel="stylesheet" href="../../css/principal.css">
+    <link rel="stylesheet" href="../../css/principal.css">
+    <script src="../../js/produtos/list.js"></script>
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
-        <h2>🎵 Music Store</h2>
-        <ul>
-             <li><a href="../../index.html">Início</a></li>
-            <li><a href="./cad.html">Cadastrar</a></li>
-            <li><a href="./consult.html">Consultar</a></li>
-            <li><a href="./list.html">Listar</a></li>
-            <li><a href="./atu.html">Atualizar</a></li>
-            <li><a href="./apag.html">Excluir</a></li>
-        </ul>
+        <li><a href="../../index.html">Início produtos</a></li>
+        <li><a href="./cad.html">Cadastrar produtos</a></li>
+        <li><a href="./consult.html">Consultar produtos</a></li>
+        <li><a href="./list.html">Listar produtos</a></li>
+        <li><a href="./atu.html">Atualizar produtos</a></li>
+        <li><a href="./apag.html">Excluir produtos</a></li>
     </nav>
 
-    <!-- CONTEÚDO -->
-    <div class="container">
-        <h1>listar produtos</h1>
-    </div>
+    <form>
+        <h1>Listar Produtos</h1>
+    </form>
 
+    <br>
+
+    <section>
+        <button id="btn_listar">Listar</button>
+    </section>
+
+    <div id="resposta" class="resposta"></div>
+    </main>
 </body>
+
 </html>

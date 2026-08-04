@@ -1,125 +1,87 @@
-### =====================================================
-### TESTES DA API - REST CLIENT
-### Sistema de Compras Interno
-### =====================================================
+### - testes da API - o REST Client
 
-### =====================================================
-### TESTE 1 - Verificar se o servidor está funcionando
-### =====================================================
-
+### - Teste se o servidor está funcionando
 GET http://localhost:3000/
 Content-Type: application/json
 
-### =====================================================
-### TESTE 2 - Criar usuário para realizar compras
-### =====================================================
-
-POST http://localhost:3000/usuario
-Content-Type: application/json
-
-{
-    "nome": "João",
-    "sobrenome": "Silva",
-    "idade": 30,
-    "email": "joao@email.com",
-    "telefone": "11999999999",
-    "endereco": "Rua das Flores",
-    "cidade": "São Paulo",
-    "estado": "SP"
-}
-
-### =====================================================
-### TESTE 3 - CARGA INICIAL DE PRODUTOS
-### Produtos musicais para o e-commerce
-### =====================================================
+#####################################################################
+### PASSO 1: CARGA INICIAL DE PRODUTOS POR CATEGORIAS DISTINTAS
 
 POST http://localhost:3000/produtos/carga-lote
 Content-Type: application/json
 
 [
     {
-        "title": "The Dark Side of the Moon - Pink Floyd",
-        "description": "Álbum clássico em vinil",
-        "category": "Vinil",
-        "price": 250.00,
-        "discountPercentage": 10,
-        "stock": 5,
-        "brand": "Sony Music",
-        "thumbnail": "imagem1.jpg"
+        "title": "Mascara Lash Princess",
+        "category": "Beleza",
+        "price": 50.00,
+        "stock": 5
     },
     {
-        "title": "Abbey Road - The Beatles",
-        "description": "CD remasterizado",
-        "category": "CD",
-        "price": 80.00,
-        "discountPercentage": 5,
-        "stock": 25,
-        "brand": "Universal Music",
-        "thumbnail": "imagem2.jpg"
+        "title": "Tênis de Corrida Pegasus",
+        "category": "Calçados",
+        "price": 700.00,
+        "stock": 25
     },
     {
-        "title": "Thriller - Michael Jackson",
-        "description": "Fita cassete original",
-        "category": "Fita Cassete",
-        "price": 150.00,
-        "discountPercentage": 0,
-        "stock": 12,
-        "brand": "Epic Records",
-        "thumbnail": "imagem3.jpg"
+        "title": "Smartphone Quantum v4",
+        "category": "Eletrônicos",
+        "price": 2500.00,
+        "stock": 12
     },
     {
-        "title": "Nevermind - Nirvana",
-        "description": "Vinil edição especial",
-        "category": "Vinil",
-        "price": 300.00,
-        "discountPercentage": 15,
-        "stock": 8,
-        "brand": "Geffen Records",
-        "thumbnail": "imagem4.jpg"
+        "title": "Cadeira Ergonômica Pro",
+        "category": "Escritório",
+        "price": 1200.00,
+        "stock": 8
     },
     {
-        "title": "Back in Black - AC/DC",
-        "description": "CD edição comemorativa",
-        "category": "CD",
-        "price": 90.00,
-        "discountPercentage": 5,
-        "stock": 15,
-        "brand": "Atlantic Records",
-        "thumbnail": "imagem5.jpg"
+        "title": "Cafeteira Express",
+        "category": "Eletrodomésticos",
+        "price": 450.00,
+        "stock": 15
     },
     {
-        "title": "Master of Puppets - Metallica",
-        "description": "Vinil clássico do Metal",
-        "category": "Vinil",
-        "price": 220.00,
-        "discountPercentage": 10,
-        "stock": 40,
-        "brand": "Warner Records",
-        "thumbnail": "imagem6.jpg"
+        "title": "Livro de Estrutura de Dados",
+        "category": "Livros",
+        "price": 120.00,
+        "stock": 40
     }
 ]
 
-### =====================================================
-### TESTE 4 - MOVIMENTAÇÕES DE SAÍDA
-### Gerando dados para vw_volume_compras
-### =====================================================
+#####################################################################
+### PASSO EXTRA (NECESSÁRIO NO SEU PROJETO)
+### Criar usuário para evitar erro no idUsuario
 
-### Venda Pink Floyd
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "nome": "Teste",
+    "sobrenome": "Usuario",
+    "idade": 20,
+    "email": "teste@email.com"
+}
+
+#####################################################################
+### PASSO 2: MOVIMENTAÇÕES DE ESTOQUE
+
+### Movimentação 1
 POST http://localhost:3000/compra
 Content-Type: application/json
 
 {
     "idUsuario": 1,
-    "idProduto": 1,
+    "idProduto": 3,
     "tipoMovimento": "SAIDA",
     "quantidadeMovimentada": 3,
-    "descontoAplicado": 0,
+    "descontoAplicado": 0.00,
     "formaPagamento": "CREDITO",
     "statusCompra": "PAGA",
-    "dataCompra": "2026-08-01"
+    "dataCompra": "2026-07-06"
 }
 
-### Venda Beatles
+### Movimentação 2
 POST http://localhost:3000/compra
 Content-Type: application/json
 
@@ -128,28 +90,13 @@ Content-Type: application/json
     "idProduto": 2,
     "tipoMovimento": "SAIDA",
     "quantidadeMovimentada": 5,
-    "descontoAplicado": 0,
+    "descontoAplicado": 0.00,
     "formaPagamento": "DEBITO",
     "statusCompra": "PAGA",
-    "dataCompra": "2026-08-01"
+    "dataCompra": "2026-07-06"
 }
 
-### Venda Michael Jackson
-POST http://localhost:3000/compra
-Content-Type: application/json
-
-{
-    "idUsuario": 1,
-    "idProduto": 3,
-    "tipoMovimento": "SAIDA",
-    "quantidadeMovimentada": 4,
-    "descontoAplicado": 0,
-    "formaPagamento": "DINHEIRO",
-    "statusCompra": "PAGA",
-    "dataCompra": "2026-08-01"
-}
-
-### Venda Nirvana
+### Movimentação 3
 POST http://localhost:3000/compra
 Content-Type: application/json
 
@@ -158,13 +105,13 @@ Content-Type: application/json
     "idProduto": 4,
     "tipoMovimento": "SAIDA",
     "quantidadeMovimentada": 2,
-    "descontoAplicado": 0,
-    "formaPagamento": "CREDITO",
+    "descontoAplicado": 0.00,
+    "formaPagamento": "DINHEIRO",
     "statusCompra": "PAGA",
-    "dataCompra": "2026-08-01"
+    "dataCompra": "2026-07-06"
 }
 
-### Venda AC/DC
+### Movimentação 4
 POST http://localhost:3000/compra
 Content-Type: application/json
 
@@ -173,13 +120,13 @@ Content-Type: application/json
     "idProduto": 5,
     "tipoMovimento": "SAIDA",
     "quantidadeMovimentada": 4,
-    "descontoAplicado": 0,
-    "formaPagamento": "DEBITO",
+    "descontoAplicado": 0.00,
+    "formaPagamento": "DINHEIRO",
     "statusCompra": "PAGA",
-    "dataCompra": "2026-08-01"
+    "dataCompra": "2026-07-06"
 }
 
-### Venda Metallica
+### Movimentação 5
 POST http://localhost:3000/compra
 Content-Type: application/json
 
@@ -188,17 +135,28 @@ Content-Type: application/json
     "idProduto": 6,
     "tipoMovimento": "SAIDA",
     "quantidadeMovimentada": 10,
-    "descontoAplicado": 0,
+    "descontoAplicado": 0.00,
     "formaPagamento": "CREDITO",
     "statusCompra": "PAGA",
-    "dataCompra": "2026-08-01"
+    "dataCompra": "2026-07-06"
 }
 
-### =====================================================
-### TESTE 5 - ERRO DE ESTOQUE INSUFICIENTE
-### Deve retornar erro 400
-### =====================================================
+### Movimentação 6 (CRÍTICO)
+POST http://localhost:3000/compra
+Content-Type: application/json
 
+{
+    "idUsuario": 1,
+    "idProduto": 1,
+    "tipoMovimento": "SAIDA",
+    "quantidadeMovimentada": 4,
+    "descontoAplicado": 0.00,
+    "formaPagamento": "DEBITO",
+    "statusCompra": "PAGA",
+    "dataCompra": "2026-07-06"
+}
+
+### Movimentação 7 (ERRO DE ESTOQUE)
 POST http://localhost:3000/compra
 Content-Type: application/json
 
@@ -206,52 +164,20 @@ Content-Type: application/json
     "idUsuario": 1,
     "idProduto": 4,
     "tipoMovimento": "SAIDA",
-    "quantidadeMovimentada": 9999,
-    "descontoAplicado": 0,
+    "quantidadeMovimentada": 50,
+    "descontoAplicado": 0.00,
     "formaPagamento": "CREDITO",
     "statusCompra": "PENDENTE",
-    "dataCompra": "2026-08-01"
+    "dataCompra": "2026-07-06"
 }
 
-### =====================================================
-### TESTE 6 - RELATÓRIOS
-### =====================================================
+#####################################################################
+### PASSO 3: RELATÓRIOS (CORRIGIDO COM SUAS ROTAS)
 
-### Produtos críticos (estoque < 10)
-
-GET http://localhost:3000/produtosCriticos
-Content-Type: application/json
-
-### Volume financeiro comprado por produto 
-
+### Volume por categoria
 GET http://localhost:3000/volumeCompras
 Content-Type: application/json
 
-### =====================================================
-### TESTE 7 - CRUD
-### =====================================================
-
-### Listar usuários
-
-GET http://localhost:3000/usuarios
-Content-Type: application/json
-
-### Consultar usuário
-
-GET http://localhost:3000/usuario/1
-Content-Type: application/json
-
-### Listar produtos
-
-GET http://localhost:3000/produtos
-Content-Type: application/json
-
-### Consultar produto
-
-GET http://localhost:3000/produto/1
-Content-Type: application/json
-
-### Listar compras
-
-GET http://localhost:3000/compras
+### Produtos críticos
+GET http://localhost:3000/produtosCriticos
 Content-Type: application/json

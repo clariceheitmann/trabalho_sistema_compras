@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Sistema de Compras</title>
     <link rel="stylesheet" href="../../css/principal.css">
+    <script src="../../js/compras/consult.js"></script>
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
-        <h2>🎵 Music Store</h2>
-        <ul>
-           <li><a href="../../index.html">Início</a></li>
-            <li><a href="./cad.html">Cadastrar</a></li>
-            <li><a href="./consult.html">Consultar</a></li>
-            <li><a href="./list.html">Listar</a></li>
-            <li><a href="./atu.html">Atualizar</a></li>
-            <li><a href="./apag.html">Excluir</a></li>
-        </ul>
+        <li><a href="../../index.html">Início compras</a></li>
+        <li><a href="./cad.html">Cadastrar compras</a></li>
+        <li><a href="./consult.html">Consultar compras</a></li>
+        <li><a href="./list.html">Listar compras</a></li>
+        <li><a href="./atu.html">Atualizar compras</a></li>
+        <li><a href="./apag.html">Excluir compras</a></li>
     </nav>
 
-    <!-- CONTEÚDO -->
-    <div class="container">
-        <h1>Consultar Compras</h1>
-    </div>
+    <form>
+        <h1>Consultar Compra</h1>
+    </form>
 
+    <br>
+
+    <section>
+        <label for="codCompra">ID da compra</label><br>
+        <input type="text" id="codCompra"><br><br>
+
+        <button id="btn_consultar">Consultar</button>
+    </section>
+
+    <div id="resposta" class="resposta"></div>
+    </main>
 </body>
+
 </html>

@@ -1,29 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <title>Sistema de Compras</title>
-<link rel="stylesheet" href="../../css/principal.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/principal.css">
+    <script src="../../js/usuarios/cad.js" defer></script>
+    <title>Sistema compras</title>
 </head>
+
 <body>
+    <main>
+        <nav>
+            <a href="../../index.html">Principal</a>
+            <a href="./cad.html">Cadastrar usuário</a>
+            <a href="./list.html">Listar usuários</a>
+            <a href="./consult.html">Consultar usuário</a>
+            <a href="./atu.html">Atualizar usuário</a>
+            <a href="./apag.html">Excluir usuário</a>
+        </nav>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <h2>🎵 Music Store</h2>
-        <ul>
-             <li><a href="../../index.html">Início</a></li>
-            <li><a href="./cad.html">Cadastrar</a></li>
-            <li><a href="./consult.html">Consultar</a></li>
-            <li><a href="./list.html">Listar</a></li>
-            <li><a href="./atu.html">Atualizar</a></li>
-            <li><a href="./apag.html">Excluir</a></li>
-        </ul>
-    </nav>
+        <form>
+            <h1>Cadastrar Usuário</h1>
+        </form>
 
-    <!-- CONTEÚDO -->
-    <div class="container">
-        <h1>cad usuario</h1>
-    </div>
+        <br>
 
+        <section>
+            <label for="nome">Nome</label><br>
+            <input type="text" id="nome"><br><br>
+
+            <label for="sobrenome">Sobrenome</label><br>
+            <input type="text" id="sobrenome"><br><br>
+
+            <label for="idade">Idade</label><br>
+            <input type="text" id="idade"><br><br>
+
+            <label for="email">Email</label><br>
+            <input type="text" id="email"><br><br>
+
+            <label for="telefone">Telefone</label><br>
+            <input type="text" id="telefone"><br><br>
+
+            <label for="endereco">Endereço</label><br>
+            <input type="text" id="endereco"><br><br>
+
+            <label for="cidade">Cidade</label><br>
+            <input type="text" id="cidade"><br><br>
+
+            <label for="estado">Estado</label><br>
+            <input type="text" id="estado"><br><br>
+
+            <button id="btn_cadastrar">Cadastrar</button>
+        </section>
+
+        <div id="resposta" class="resposta"></div>
+    </main>
 </body>
+
 </html>

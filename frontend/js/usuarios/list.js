@@ -27,10 +27,14 @@ function thead(){
     <thead>
         <tr>
             <th>Código do Usuário</th>
-            <th>Novo Nome</th>
-            <th>Novo Sobrenome</th>
-            <th>Nova Idade</th>
-            <th>Novo Email</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Idade</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>Cidade</th>
+            <th>Estado</th>
         </tr>
     </thead>
     `
@@ -47,6 +51,10 @@ function tbody(dadosArr){
         corpo += `<td>${el.sobrenome}</td>`
         corpo += `<td>${el.idade}</td>`
         corpo += `<td>${el.email}</td>`
+        corpo += `<td>${el.telefone}</td>`
+        corpo += `<td>${el.endereco}</td>`
+        corpo += `<td>${el.cidade}</td>`
+        corpo += `<td>${el.estado}</td>`
         corpo += `</tr>`
     })
     corpo += `</tbody>`

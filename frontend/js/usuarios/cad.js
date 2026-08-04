@@ -4,16 +4,25 @@ let btn_cadastrar = document.getElementById('btn_cadastrar')
 btn_cadastrar.addEventListener('click', (e) =>{
     e.preventDefault()
 
+    const codUsuario = Number(document.getElementById('codUsuario').value)
     const nome = document.getElementById('nome').value
     const sobrenome = document.getElementById('sobrenome').value
     const idade = Number(document.getElementById('idade').value)
     const email = document.getElementById('email').value
+    const telefone = document.getElementById('telefone').value
+    const endereco = document.getElementById('endereco').value
+    const cidade = document.getElementById('cidade').value
+    const estado = document.getElementById('estado').value
 
-    const usuario = {
+    const usuarioAtualizado = {
         nome: nome,
         sobrenome: sobrenome,
         idade: idade,
         email: email,
+        telefone: telefone,
+        endereco: endereco,
+        cidade: cidade,
+        estado: estado,
     }
 
     fetch(`http://localhost:3000/usuario`,{

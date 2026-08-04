@@ -1,29 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Sistema de Compras</title>
     <link rel="stylesheet" href="../../css/principal.css">
+    <script src="../../js/compras/cad.js"></script>
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
-        <h2>🎵 Music Store</h2>
-        <ul>
-             <li><a href="../../index.html">Início</a></li>
-            <li><a href="./cad.html">Cadastrar</a></li>
-            <li><a href="./consult.html">Consultar</a></li>
-            <li><a href="./list.html">Listar</a></li>
-            <li><a href="./atu.html">Atualizar</a></li>
-            <li><a href="./apag.html">Excluir</a></li>
-        </ul>
+        <li><a href="../../index.html">Início compras</a></li>
+        <li><a href="./cad.html">Cadastrar compras</a></li>
+        <li><a href="./consult.html">Consultar compras</a></li>
+        <li><a href="./list.html">Listar compras</a></li>
+        <li><a href="./atu.html">Atualizar compras</a></li>
+        <li><a href="./apag.html">Excluir compras</a></li>
     </nav>
 
-    <!-- CONTEÚDO -->
-    <div class="container">
-        <h1>Cadastrar</h1>
-    </div>
+    <form>
+        <h1>Cadastrar Compra</h1>
+    </form>
 
+    <br>
+
+    <section>
+        <label for="idUsuario">ID do usuário</label><br>
+        <input type="text" id="idUsuario"><br><br>
+
+        <label for="idProduto">ID do produto</label><br>
+        <input type="text" id="idProduto"><br><br>
+
+        <label for="tipoMovimento">Tipo de movimento</label><br>
+        <select id="tipoMovimento">
+            <option value="">Selecione</option>
+            <option value="ENTRADA">Entrada</option>
+            <option value="SAIDA">Saída</option>
+        </select><br><br>
+
+        <label for="quantidadeMovimentada">Quantidade movimentada</label><br>
+        <input type="text" id="quantidadeMovimentada"><br><br>
+
+        <label for="precoUnitario">Preço unitário</label><br>
+        <input type="number" step="0.01" id="precoUnitario"><br><br>
+
+        <label for="descontoAplicado">Desconto aplicado</label><br>
+        <input type="number" step="0.01" id="descontoAplicado"><br><br>
+
+        <label for="precoFinal">Preço final</label><br>
+        <input type="number" step="0.01" id="precoFinal"><br><br>
+
+        <label for="formaPagamento">Forma de pagamento</label><br>
+        <select id="formaPagamento">
+            <option value="">Selecione</option>
+            <option value="DEBITO">Débito</option>
+            <option value="CREDITO">Crédito</option>
+            <option value="DINHEIRO">Dinheiro</option>
+        </select><br><br>
+
+        <label for="statusCompra">Status da compra</label><br>
+        <select id="statusCompra">
+            <option value="">Selecione</option>
+            <option value="PAGA">Paga</option>
+            <option value="PENDENTE">Pendente</option>
+        </select><br><br>
+
+        <label for="dataCompra">Data da compra</label><br>
+        <input type="date" id="dataCompra"><br><br>
+
+        <button id="btn_cadastrar">Cadastrar</button>
+    </section>
+
+    <div id="resposta" class="resposta"></div>
+    </main>
 </body>
+
 </html>

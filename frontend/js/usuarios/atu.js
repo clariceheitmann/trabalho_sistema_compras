@@ -9,12 +9,20 @@ btn_atualizar.addEventListener('click', (e) =>{
     const sobrenome = document.getElementById('sobrenome').value
     const idade = Number(document.getElementById('idade').value)
     const email = document.getElementById('email').value
+    const telefone = document.getElementById('telefone').value
+    const endereco = document.getElementById('endereco').value
+    const cidade = document.getElementById('cidade').value
+    const estado = document.getElementById('estado').value
 
     const usuarioAtualizado = {
         nome: nome,
         sobrenome: sobrenome,
         idade: idade,
         email: email,
+        telefone: telefone,
+        endereco: endereco,
+        cidade: cidade,
+        estado: estado,
     }
 
     fetch(`http://localhost:3000/usuario/${codUsuario}`,{
@@ -60,6 +68,10 @@ function thead(){
             <th>Novo Sobrenome</th>
             <th>Nova Idade</th>
             <th>Novo Email</th>
+            <th>Novo Telefone</th>
+            <th>Novo Endereço</th>
+            <th>Nova Cidade</th>
+            <th>Novo Estado</th>
         </tr>
     </thead>
     `
@@ -76,6 +88,10 @@ function tbody(dadosArr){
         corpo += `<td>${el.sobrenome}</td>`
         corpo += `<td>${el.idade}</td>`
         corpo += `<td>${el.email}</td>`
+        corpo += `<td>${el.telefone}</td>`
+        corpo += `<td>${el.endereco}</td>`
+        corpo += `<td>${el.cidade}</td>`
+        corpo += `<td>${el.estado}</td>`
         corpo += `</tr>`
     })
     corpo += `</tbody>`

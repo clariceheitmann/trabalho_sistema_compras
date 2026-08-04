@@ -1,29 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Sistema de Compras</title>
-<link rel="stylesheet" href="../../css/principal.css">
+    <link rel="stylesheet" href="../../css/principal.css">
+    <script src="../../js/produtos/atu.js"></script>
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
-        <h2>🎵 Music Store</h2>
-        <ul>
-             <li><a href="../../index.html">Início</a></li>
-            <li><a href="./cad.html">Cadastrar</a></li>
-            <li><a href="./consult.html">Consultar</a></li>
-            <li><a href="./list.html">Listar</a></li>
-            <li><a href="./atu.html">Atualizar</a></li>
-            <li><a href="./apag.html">Excluir</a></li>
-        </ul>
+        <li><a href="../../index.html">Início produtos</a></li>
+        <li><a href="./cad.html">Cadastrar produtos</a></li>
+        <li><a href="./consult.html">Consultar produtos</a></li>
+        <li><a href="./list.html">Listar produtos</a></li>
+        <li><a href="./atu.html">Atualizar produtos</a></li>
+        <li><a href="./apag.html">Excluir produtos</a></li>
     </nav>
 
-    <!-- CONTEÚDO -->
-    <div class="container">
-        <h1>atu produtos</h1>
-    </div>
+    <form>
+        <h1>Atualizar Produto</h1>
+    </form>
 
+    <br>
+
+    <section>
+        <label for="codProduto">ID do produto</label><br>
+        <input type="text" id="codProduto"><br><br>
+
+        <label for="nome">Novo nome</label><br>
+        <input type="text" id="nome"><br><br>
+
+        <label for="descricao">Nova descrição</label><br>
+        <input type="text" id="descricao"><br><br>
+
+        <label for="categoria">Nova categoria</label><br>
+        <input type="text" id="categoria"><br><br>
+
+        <label for="preco">Novo preço</label><br>
+        <input type="text" id="preco"><br><br>
+
+        <label for="desconto">Novo desconto</label><br>
+        <input type="text" id="desconto"><br><br>
+
+        <label for="qtdeEstoque">Nova quantidade em estoque</label><br>
+        <input type="text" id="qtdeEstoque"><br><br>
+
+        <label for="marca">Nova marca</label><br>
+        <input type="text" id="marca"><br><br>
+
+        <label for="imagem">Nova imagem</label><br>
+        <input type="text" id="imagem"><br><br>
+
+        <button id="btn_atualizar">Atualizar</button>
+    </section>
+
+    <div id="resposta" class="resposta"></div>
+    </main>
 </body>
+
 </html>
