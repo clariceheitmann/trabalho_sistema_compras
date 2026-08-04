@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/principal.css">
-    <script src="../../js/usuarios/consult.js" defer></script>
-    <title>Sistema de Compras</title>
+    <script src="../../js/usuarios/cad_carga_lote.js" defer></script>
+    <title>Cadastro do Usuário</title>
 </head>
-
 <body>
-    <main>
-
+    <header>
         <nav>
             <li><a href="../../index.html">Principal</a></li>
             <li><a href="./cad.html">Cadastrar usuário</a></li>
@@ -20,22 +17,20 @@
             <li><a href="./consult.html">Consultar usuário</a></li>
             <li><a href="./atu.html">Atualizar usuário</a></li>
             <li><a href="./apag.html">Excluir usuário</a></li>
+            <br><br>
         </nav>
-
-        <form>
-            <h1>Consultar Usuário</h1>
-
-            <label for="codUsuario">ID do usuário</label><br>
-            <input type="text" id="codUsuario"><br><br>
-
-            <button type="button" id="btn_consultar">Consultar</button>
-        </form>
-
+    </header>
+    <main>
+        <h2>Cadastro Automatizado em Lote</h2>
         <br>
+        <div id="container_lote">
+            <label>Realizar a carga inicial massiva importando dados estruturados diretamente da API externa DummyJSON:</label>
+            <br><br>
+            <button id="btn_carga_lote" style="background-color: #0284fd; width: 320px;">Executar Carga em Lote (BulkCreate)</button>
+        </div>
 
-        <div id="resposta"></div>
-
+        <br><br>
+        <div id="resposta" class="resposta"></div>
     </main>
 </body>
-
 </html>

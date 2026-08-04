@@ -4,7 +4,6 @@ let btn_cadastrar = document.getElementById('btn_cadastrar')
 btn_cadastrar.addEventListener('click', (e) =>{
     e.preventDefault()
 
-    const codUsuario = Number(document.getElementById('codUsuario').value)
     const nome = document.getElementById('nome').value
     const sobrenome = document.getElementById('sobrenome').value
     const idade = Number(document.getElementById('idade').value)
@@ -14,7 +13,7 @@ btn_cadastrar.addEventListener('click', (e) =>{
     const cidade = document.getElementById('cidade').value
     const estado = document.getElementById('estado').value
 
-    const usuarioAtualizado = {
+    const usuario = {
         nome: nome,
         sobrenome: sobrenome,
         idade: idade,

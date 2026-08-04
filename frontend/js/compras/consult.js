@@ -35,13 +35,17 @@ function thead(){
     cabecalho += `
     <thead>
         <tr>
-            <th>Código</th>
-            <th>Usuário</th>
-            <th>Produto</th>
-            <th>Tipo</th>
-            <th>Quantidade</th>
-            <th>Preço Final</th>
-            <th>Status</th>
+            <th>ID da compra</th>
+            <th>ID do usuário</th>
+            <th>ID do produto</th>
+            <th>Tipo de movimento</th>
+            <th>Quantidade movimentada</th>
+            <th>Preço unitário</th>
+            <th>Desconto aplicado</th>
+            <th>Preço final</th>
+            <th>Forma de pagamento</th>
+            <th>Status da compra</th>
+            <th>Data da compra</th>
         </tr>
     </thead>
     `
@@ -58,8 +62,12 @@ function tbody(dadosArr){
         corpo += `<td>${el.idProduto}</td>`
         corpo += `<td>${el.tipoMovimento}</td>`
         corpo += `<td>${el.quantidadeMovimentada}</td>`
+        corpo += `<td>${el.precoUnitario}</td>`
+        corpo += `<td>${el.descontoAplicado}</td>`
         corpo += `<td>${el.precoFinal}</td>`
+        corpo += `<td>${el.formaPagamento}</td>`
         corpo += `<td>${el.statusCompra}</td>`
+        corpo += `<td>${el.dataCompra}</td>`
         corpo += `</tr>`
     })
     corpo += `</tbody>`

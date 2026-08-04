@@ -8,7 +8,7 @@ btn_cadastrar.addEventListener('click', (e) => {
         idUsuario: Number(document.getElementById('idUsuario').value),
         idProduto: Number(document.getElementById('idProduto').value),
         tipoMovimento: document.getElementById('tipoMovimento').value,
-        quantidadeMovimentada: Number(document.getElementById('quantidade').value),
+        quantidadeMovimentada: Number(document.getElementById('quantidadeMovimentada').value),
         formaPagamento: document.getElementById('formaPagamento').value,
         statusCompra: document.getElementById('statusCompra').value,
         dataCompra: document.getElementById('dataCompra').value

@@ -30,10 +30,15 @@ function thead(){
     return `
     <thead>
         <tr>
-            <th>ID</th>
+            <th>ID do produto</th>
             <th>Nome</th>
+            <th>Descrição</th>
+            <th>Categoria</th>
             <th>Preço</th>
-            <th>Estoque</th>
+            <th>Desconto</th>
+            <th>Quantidade em Estoque</th>
+            <th>Marca</th>
+            <th>Imagem</th>
         </tr>
     </thead>`
 }
@@ -45,8 +50,13 @@ function tbody(dados){
         <tr>
             <td>${el.codProduto}</td>
             <td>${el.nome}</td>
+            <td>${el.descricao}</td>
+            <td>${el.categoria}</td>
             <td>${el.preco}</td>
+            <td>${el.desconto}</td>
             <td>${el.qtdeEstoque}</td>
+            <td>${el.marca}</td>
+            <td>${el.imagem}</td>
         </tr>`
     })
     corpo += '</tbody>'

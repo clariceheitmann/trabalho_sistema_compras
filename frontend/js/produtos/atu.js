@@ -37,7 +37,6 @@ btn_atualizar.addEventListener('click', (e) =>{
             ${tbody([dados])}
         </table>`
 
-        resposta.innerHTML = `<p>Produto atualizado com sucesso!</p>`
         document.querySelector('form').reset()
     })
     .catch((err)=>{
@@ -50,11 +49,15 @@ function thead(){
     return `
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Categoria</th>
-            <th>Preço</th>
-            <th>Estoque</th>
+            <th>ID do produto</th>
+            <th>Novo nome</th>
+            <th>Nova descrição</th>
+            <th>Nova categoria</th>
+            <th>Novo preço</th>
+            <th>Novo desconto</th>
+            <th>Nova quantidade em Estoque</th>
+            <th>Nova marca</th>
+            <th>Nova imagem</th>
         </tr>
     </thead>`
 }
@@ -66,9 +69,13 @@ function tbody(dados){
         <tr>
             <td>${el.codProduto}</td>
             <td>${el.nome}</td>
+            <td>${el.descricao}</td>
             <td>${el.categoria}</td>
             <td>${el.preco}</td>
+            <td>${el.desconto}</td>
             <td>${el.qtdeEstoque}</td>
+            <td>${el.marca}</td>
+            <td>${el.imagem}</td>
         </tr>`
     })
     corpo += '</tbody>'

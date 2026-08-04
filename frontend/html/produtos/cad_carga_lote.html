@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/principal.css">
+    <script src="../../js/produtos/cad_carga_lote.js" defer></script>
+    <title>Cadastro de Produto</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <li><a href="../../index.html">Início</a></li>
+            <li><a href="./cad.html">Cadastrar produtos</a></li>
+            <li><a href="./cad_carga_lote.html">Cadastrar lote</a></li>
+            <li><a href="./consult.html">Consultar produtos</a></li>
+            <li><a href="./list.html">Listar produtos</a></li>
+            <li><a href="./atu.html">Atualizar produtos</a></li>
+            <li><a href="./apag.html">Excluir produtos</a></li>
+            <br><br>
+        </nav>
+    </header>
+    <main>
+        <h2>Cadastro Automatizado de Produtos em Lote</h2>
+        <br>
+        <div id="container_lote">
+            <label>Realizar a carga inicial massiva de mercadorias importando dados estruturados diretamente da API
+                externa DummyJSON:</label>
+            <br><br>
+            <button id="btn_carga_lote" style="background-color: #0284fd; width: 320px;">Executar Carga em Lote
+                (BulkCreate)</button>
+        </div>
+
+        <br><br>
+        <div id="resposta" class="resposta"></div>
+    </main>
+</body>
+
+</html>
