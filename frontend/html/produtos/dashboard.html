@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <title>Sistema de Compras</title>
-    <link rel="stylesheet" href="../../css/principal.css">
-    <script src="../../js/produtos/list.js"defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <script src="../../js/produtos/dashboard.js"defer></script>
+    <title>Dashboard de Produtos</title>
 </head>
 
 <body>
@@ -21,18 +22,22 @@
             <li><a href="./dashboard.html">Dashboard</a></li>
     </nav>
 
-    <form>
-        <h1>Listar Produtos</h1>
-    </form>
+    <header>
+        <h1>Dashboard de Produtos</h1>
+        <p>Confira nossos produtos disponíveis</p>
+    </header>
 
-    <br>
 
-    <section>
-        <button id="btn_listar">Listar</button>
-    </section>
+    <main>
 
-    <div id="resposta" class="resposta"></div>
+        <section id="container_produtos">
+
+            <!-- Os produtos serão inseridos aqui pelo JavaScript -->
+
+        </section>
+
     </main>
+
 </body>
 
 </html>

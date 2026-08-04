@@ -5,6 +5,17 @@ GET http://localhost:3000/
 Content-Type: application/json
 
 #####################################################################
+### PASSO 0: CARGA AUTOMÁTICA VIA API (DUMMYJSON)
+
+### Importar usuários da API externa
+GET http://localhost:3000/carga/usuarios
+Content-Type: application/json
+
+### Importar produtos da API externa
+GET http://localhost:3000/carga/produtos
+Content-Type: application/json
+
+#####################################################################
 ### PASSO 1: CARGA INICIAL DE PRODUTOS POR CATEGORIAS DISTINTAS
 
 POST http://localhost:3000/produtos/carga-lote
@@ -50,10 +61,10 @@ Content-Type: application/json
 ]
 
 #####################################################################
-### PASSO EXTRA (NECESSÁRIO NO SEU PROJETO)
+### PASSO EXTRA 
 ### Criar usuário para evitar erro no idUsuario
 
-POST http://localhost:3000/usuario
+POST http://localhost:3000/usuarios
 Content-Type: application/json
 
 {
@@ -141,7 +152,7 @@ Content-Type: application/json
     "dataCompra": "2026-07-06"
 }
 
-### Movimentação 6 (CRÍTICO)
+### Movimentação 6 
 POST http://localhost:3000/compra
 Content-Type: application/json
 
@@ -172,7 +183,7 @@ Content-Type: application/json
 }
 
 #####################################################################
-### PASSO 3: RELATÓRIOS (CORRIGIDO COM SUAS ROTAS)
+### PASSO 3: RELATÓRIOS 
 
 ### Volume por categoria
 GET http://localhost:3000/volumeCompras
@@ -180,4 +191,15 @@ Content-Type: application/json
 
 ### Produtos críticos
 GET http://localhost:3000/produtosCriticos
+Content-Type: application/json
+
+#####################################################################
+### TESTE EXTRA: VERIFICAR DADOS SALVOS NO BANCO
+
+### Listar usuários
+GET http://localhost:3000/usuarios
+Content-Type: application/json
+
+### Listar produtos
+GET http://localhost:3000/produtos
 Content-Type: application/json
