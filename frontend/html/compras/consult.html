@@ -1,39 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <title>Sistema de Compras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Compra</title>
     <link rel="stylesheet" href="../../css/principal.css">
-    <script src="../../js/compras/consult.js"defer></script>
+    <script src="../../js/compras/consult.js" defer></script>
 </head>
 
 <body>
+    <main>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../../index.html">Início</a></li>
+                <li><a href="./cad.html">Cadastrar compras</a></li>
+                <li><a href="./consult.html">Consultar compras</a></li>
+                <li><a href="./list.html">Listar compras</a></li>
+                <li><a href="./atu.html">Atualizar compras</a></li>
+                <li><a href="./apag.html">Excluir compras</a></li>
+            </ul>
+        </nav>
 
-    <nav class="navbar">
-        <li><a href="../../index.html">Início</a></li>
-        <li><a href="./cad.html">Cadastrar compras</a></li>
-        <li><a href="./consult.html">Consultar compras</a></li>
-        <li><a href="./list.html">Listar compras</a></li>
-        <li><a href="./atu.html">Atualizar compras</a></li>
-        <li><a href="./apag.html">Excluir compras</a></li>
-    </nav>
-
-    <form>
         <h1>Consultar Compra</h1>
-    </form>
+        <br>
 
-    <br>
+        <section>
+            <label for="codCompra">ID da compra</label><br>
+            <input type="text" id="codCompra"><br><br>
 
-    <section>
-        <label for="codCompra">ID da compra</label><br>
-        <input type="text" id="codCompra"><br><br>
+            <button type="button" id="btn_consultar">Consultar</button>
+        </section>
 
-        <button id="btn_consultar">Consultar</button>
-    </section>
-
-    <div id="resposta" class="resposta"></div>
+        <br>
+        <div id="resposta" class="resposta"></div>
     </main>
+    <footer>
+        <p>&copy;Sistema de Gestão de Compras.</p>
+        <p>Desenvolvido por <strong>Clarice Heitmann</strong> | Email de contato: <strong>clarice_h_santos@estudante.sesisenai.org.br</strong></p>
+    </footer>
 </body>
 
 </html>

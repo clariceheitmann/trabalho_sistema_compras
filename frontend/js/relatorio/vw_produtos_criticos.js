@@ -41,23 +41,20 @@ gerar_grafico.addEventListener('click', () => {
 
         let ctx = document.getElementById('graf').getContext('2d')
 
-        // CORREÇÃO: Configurando a cor das barras globais para AZUL ESCURO
-        Chart.defaults.backgroundColor = '#0f4c81'
-        Chart.defaults.borderColor = 'white'
-        Chart.defaults.color = '#fff'
-        Chart.defaults.font.size = 16
+        // CONFIGURAÇÕES GERAIS DE CORES E FONTE
+        Chart.defaults.color = '#105666' // Cor escura para textos (substitui o branco apagado)
+        Chart.defaults.font.size = 12
         Chart.defaults.font.family = 'sans-serif'
-        Chart.defaults.font.weight = 'bold'
 
         const data = {
             labels: produtos,
             datasets: [{
                 label: 'Quantidade em Estoque',  
                 data: estoques,
-                fill: true,
-                borderColor: 'white',
-                borderWidth: 4,
-                tension: 0.3
+                backgroundColor: '#0A3323', // Verde escuro elegante para as barras
+                borderColor: '#839958',     // Borda verde suave nas barras
+                borderWidth: 1.5,
+                borderRadius: 4
             }]
         }
 
@@ -67,28 +64,43 @@ gerar_grafico.addEventListener('click', () => {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                layout: {
+                    padding: { top: 25, bottom: 10 } // Espaço extra superior para os números não cortarem
+                },
                 plugins: {
-                    legend: { display: true },
+                    legend: {
+                        display: true,
+                        labels: { color: '#0A3323', font: { weight: 'bold' } }
+                    },
                     title: {
                         display: true,
-                        text: 'Estoque Físico Crítico Atual (< 10 unidades)'
+                        text: 'Estoque Físico Crítico Atual (< 10 unidades)',
+                        color: '#0A3323',
+                        font: { size: 15, weight: 'bold' }
                     },
                     datalabels: {
                         display: true,
+                        anchor: 'end',
                         align: 'top',
-                        color: 'white',
-                        font: { weight: 'bold' }
+                        color: '#0A3323', // Cor do número em cima da barra
+                        font: { weight: 'bold', size: 12 }
                     }
                 },
                 scales: {
                     x: {
                         display: true,
-                        title: { display: true, text: 'Produto' }
+                        ticks: {
+                            color: '#105666',
+                            maxRotation: 45, // Rotaciona textos longos para não embolar
+                            minRotation: 0
+                        },
+                        grid: { display: false }
                     },
                     y: {
                         display: true,
-                        title: { display: true, text: 'Quantidade em Depósito' },
-                        suggestedMax: 10
+                        ticks: { color: '#105666' },
+                        grid: { color: 'rgba(0, 0, 0, 0.05)' },
+                        suggestedMax: 12
                     }
                 }
             },

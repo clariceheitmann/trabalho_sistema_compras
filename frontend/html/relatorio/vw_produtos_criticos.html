@@ -11,35 +11,38 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 
     <script src="../../js/relatorio/vw_produtos_criticos.js" defer></script>
-    <title>Sistema compras</title>
+    <title>Produtos Críticos</title>
 </head>
 
 <body>
     <main>
-        <nav>
-            <a href="../../index.html">Principal</a>
-            <li><a href="./vw_produtos_criticos.html">Produtos Críticos</a></li>
-            <li><a href="./vw_volume_compras.html">Volume de Compras</a></li>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../../index.html">Início</a></li>
+                <li><a href="./vw_produtos_criticos.html">Produtos Críticos</a></li>
+                <li><a href="./vw_volume_compras.html">Volume de Compras</a></li>
+            </ul>
         </nav>
 
-        <form>
-            <h1>Listar Produtos Críticos</h1>
-        </form>
-
+        <h1>Listar Produtos Críticos</h1>
         <br>
 
         <section>
-            <!-- ID ajustado para bater com o JavaScript -->
-            <button id="gerar_grafico">Listar</button>
+            <button type="button" id="gerar_grafico">Listar</button>
         </section>
 
+        <br>
         <div id="resposta" class="resposta"></div>
 
-        <!-- Canvas necessário para o Chart.js desenhar o gráfico -->
-        <div style="position: relative; height:40vh; width:80vw">
+        <!-- Container do Gráfico com altura fixa e largura responsiva interna -->
+        <div class="chart-container">
             <canvas id="graf"></canvas>
         </div>
     </main>
+    <footer>
+        <p>&copy;Sistema de Gestão de Compras.</p>
+        <p>Desenvolvido por <strong>Clarice Heitmann</strong> | Email de contato: <strong>clarice_h_santos@estudante.sesisenai.org.br</strong></p>
+    </footer>
 </body>
 
 </html>

@@ -1,65 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <title>Sistema de Compras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/principal.css">
-    <script src="../../js/produtos/atu.js"defer></script>
+    <script src="../../js/produtos/atu.js" defer></script>
+    <title>Atualizar Produto</title>
 </head>
 
 <body>
+    <main>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../../index.html">Início</a></li>
+                <li><a href="./cad.html">Cadastrar produtos</a></li>
+                <li><a href="./cad_carga_lote.html">Cadastrar lote</a></li>
+                <li><a href="./consult.html">Consultar produtos</a></li>
+                <li><a href="./list.html">Listar produtos</a></li>
+                <li><a href="./atu.html">Atualizar produtos</a></li>
+                <li><a href="./apag.html">Excluir produtos</a></li>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
 
-    <nav class="navbar">
-        <li><a href="../../index.html">Início</a></li>
-        <li><a href="./cad.html">Cadastrar produtos</a></li>
-        <li><a href="./cad_carga_lote.html">Cadastrar lote</a></li>
-        <li><a href="./consult.html">Consultar produtos</a></li>
-        <li><a href="./list.html">Listar produtos</a></li>
-        <li><a href="./atu.html">Atualizar produtos</a></li>
-        <li><a href="./apag.html">Excluir produtos</a></li>
-        <li><a href="./dashboard.html">Dashboard</a></li>
-    </nav>
-
-    <form>
         <h1>Atualizar Produto</h1>
-    </form>
+        <br>
 
-    <br>
+        <section>
+            <label for="codProduto">ID do produto</label><br>
+            <input type="text" id="codProduto"><br><br>
 
-    <section>
-        <label for="codProduto">ID do produto</label><br>
-        <input type="text" id="codProduto"><br><br>
+            <label for="nome">Novo nome</label><br>
+            <input type="text" id="nome"><br><br>
 
-        <label for="nome">Novo nome</label><br>
-        <input type="text" id="nome"><br><br>
+            <label for="descricao">Nova descrição</label><br>
+            <input type="text" id="descricao"><br><br>
 
-        <label for="descricao">Nova descrição</label><br>
-        <input type="text" id="descricao"><br><br>
+            <label for="categoria">Nova categoria</label><br>
+            <input type="text" id="categoria"><br><br>
 
-        <label for="categoria">Nova categoria</label><br>
-        <input type="text" id="categoria"><br><br>
+            <label for="preco">Novo preço</label><br>
+            <input type="text" id="preco"><br><br>
 
-        <label for="preco">Novo preço</label><br>
-        <input type="text" id="preco"><br><br>
+            <label for="desconto">Novo desconto</label><br>
+            <input type="text" id="desconto"><br><br>
 
-        <label for="desconto">Novo desconto</label><br>
-        <input type="text" id="desconto"><br><br>
+            <label for="qtdeEstoque">Nova quantidade em estoque</label><br>
+            <input type="text" id="qtdeEstoque"><br><br>
 
-        <label for="qtdeEstoque">Nova quantidade em estoque</label><br>
-        <input type="text" id="qtdeEstoque"><br><br>
+            <label for="marca">Nova marca</label><br>
+            <input type="text" id="marca"><br><br>
 
-        <label for="marca">Nova marca</label><br>
-        <input type="text" id="marca"><br><br>
+            <label for="imagem">Nova imagem</label><br>
+            <input type="text" id="imagem"><br><br>
 
-        <label for="imagem">Nova imagem</label><br>
-        <input type="text" id="imagem"><br><br>
+            <button id="btn_atualizar">Atualizar</button>
+        </section>
 
-        <button id="btn_atualizar">Atualizar</button>
-    </section>
-
-    <div id="resposta" class="resposta"></div>
+        <br>
+        <div id="resposta" class="resposta"></div>
     </main>
+    <footer>
+        <p>&copy;Sistema de Gestão de Compras.</p>
+        <p>Desenvolvido por <strong>Clarice Heitmann</strong> | Email de contato: <strong>clarice_h_santos@estudante.sesisenai.org.br</strong></p>
+    </footer>
 </body>
 
 </html>

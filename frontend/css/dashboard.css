@@ -2,124 +2,105 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 body {
-    background-color: #f4f4f4;
+    background-color: #F7F4D5;
+    color: #105666;
     padding: 20px;
 }
 
-
 header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
-
 
 header h1 {
     font-size: 32px;
-    margin-bottom: 10px;
+    color: #0A3323;
+    margin-bottom: 8px;
 }
-
 
 header p {
-    color: #555;
+    color: #105666;
+    opacity: 0.8;
 }
 
-
 /* Área dos produtos */
-
 #container_produtos {
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
-
 }
 
-
-
-/* Card */
-
+/* Card de Produto */
 .card {
-
     width: 230px;
-
-    background-color: white;
-
-    padding: 15px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-
+    background-color: #ffffff;
+    padding: 20px 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(10, 51, 35, 0.08);
     text-align: center;
-
-    transition: transform 0.3s;
-
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(131, 153, 88, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-
 
 .card:hover {
-
-    transform: scale(1.05);
-
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(10, 51, 35, 0.15);
 }
 
-
-
-.card img {
-
+/* Container de imagem */
+.card-img-container {
     width: 100%;
-
-    height: 160px;
-
-    object-fit: cover;
-
-    border-radius: 10px;
-
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
 }
 
+/* CORREÇÃO DA IMAGEM: contain para NÃO CORTAR */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajusta a imagem inteira sem cortar */
+    transition: transform 0.4s ease;
+}
 
+.card:hover img {
+    transform: scale(1.05);
+}
 
+/* Título e textos das informações */
 .card h3 {
-
-    margin: 15px 0 10px;
-
-    font-size: 20px;
-
+    margin: 8px 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0A3323;
+    line-height: 1.2;
 }
 
-
-
-.card p {
-
-    margin: 8px;
-
-    color: #555;
-
+.card .categoria {
+    color: #666666;
+    font-size: 13px;
+    margin-bottom: 6px;
 }
 
-
-
-.preco {
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    color: green;
-
+.card .preco {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0A3323;
+    margin: 4px 0;
 }
 
-
-
-.estoque {
-
-    font-weight: bold;
-
+.card .estoque {
+    font-size: 13px;
+    font-weight: 500;
+    color: #555555;
 }

@@ -1,15 +1,5 @@
 let resposta = document.getElementById('resposta')
-let btn_cadastrar_manual = document.getElementById('btn_cadastrar_manual')
 let btn_carga_lote = document.getElementById('btn_carga_lote')
-
-// =========================================================================
-// COMPORTAMENTO 1: CADASTRO MANUAL (INDICAÇÃO VISUAL / APENAS MODELO)
-// =========================================================================
-btn_cadastrar_manual.addEventListener('click', (e) => {
-    e.preventDefault()
-    // Apenas indica visualmente no painel sem disparar requisições para o back-end
-    resposta.innerHTML = '<p style="color: #ffaa00;">Aviso: O cadastro manual está desativado nesta etapa. Utilize a Carga em Lote.</p>'
-})
 
 // =========================================================================
 // COMPORTAMENTO 2: CADASTRO EM LOTE (BULKCREATE VIA DUMMYJSON)

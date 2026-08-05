@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Compras</title>
     <link rel="stylesheet" href="./css/principal.css">
 </head>
+
 <body>
 
     <!-- NAVBAR -->
     <nav class="navbar">
-        <h2>Music Store</h2>
         <ul>
             <li><a href="index.html">Início</a></li>
             <li><a href="./html/usuarios/cad.html">Usuários</a></li>
@@ -20,25 +22,53 @@
         </ul>
     </nav>
 
-    <!-- CONTEÚDO -->
-    <div class="container">
-        <h1>Bem-vindo ao Sistema de Compras</h1>
-        <p>
-            aaaaaaaaaaaaaaaaaa
-        </p>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+        <header style="text-align: center; margin-bottom: 30px;">
+    <h1>Painel de Controle de Compras</h1>
+    <p>Gerencie usuários, estoques e analise relatórios em um só lugar!</p>
+    <p>Escolha uma opção abaixo para iniciar o gerenciamento das suas operações.</p>
+</header>
 
-        <p>
-            Aqui você poderá:
-        </p>
+        <!-- CARDS DE ACESSO RÁPIDO (2 EM CIMA, 3 EM BAIXO) -->
+        <div class="grid-modulos">
+            <!-- Linha Superior: 2 Cards -->
+            <div class="linha-cards">
+                <a href="./html/usuarios/cad.html" class="card-modulo">
+                    <h3>Usuários</h3>
+                    <p>Cadastre e gerencie a lista de usuários do sistema.</p>
+                </a>
 
-        <ul>
-            <li>Cadastrar usuários</li>
-            <li>Gerenciar produtos</li>
-            <li>Registrar compras e movimentações</li>
-            <li>Visualizar relatórios analíticos</li>
-            <li>Acompanhar gráficos de desempenho</li>
-        </ul>
-    </div>
+                <a href="./html/produtos/cad.html" class="card-modulo">
+                    <h3>Produtos</h3>
+                    <p>Cadastre novos itens, preços e quantidades em estoque.</p>
+                </a>
+            </div>
 
+            <!-- Linha Inferior: 3 Cards -->
+            <div class="linha-cards">
+                <a href="./html/compras/cad.html" class="card-modulo">
+                    <h3>Compras</h3>
+                    <p>Registre novas ordens de compras e movimentações de estoque.</p>
+                </a>
+
+                <a href="./html/relatorio/vw_produtos_criticos.html" class="card-modulo">
+                    <h3>Relatórios</h3>
+                    <p>Acompanhe produtos em nível crítico e volume de compras.</p>
+                </a>
+
+                <a href="./html/produtos/dashboard.html" class="card-modulo">
+                    <h3>Dashboard</h3>
+                    <p>Visualize os produtos de forma gráfica e interativa.</p>
+                </a>
+            </div>
+        </div>
+        </div>
+    </main>
+
+<footer>
+        <p>&copy;Sistema de Gestão de Compras.</p>
+        <p>Desenvolvido por <strong>Clarice Heitmann</strong> | Email de contato: <strong>clarice_h_santos@estudante.sesisenai.org.br</strong></p>
+    </footer>
 </body>
 </html>

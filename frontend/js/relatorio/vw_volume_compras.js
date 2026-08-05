@@ -39,23 +39,20 @@ gerar_grafico.addEventListener('click', () => {
 
         let ctx = document.getElementById('graf').getContext('2d')
 
-        // CORREÇÃO: Configurando a cor das barras globais para AZUL ESCURO
-        Chart.defaults.backgroundColor = '#0f4c81'
-        Chart.defaults.borderColor = 'white'
-        Chart.defaults.color = '#fff'
-        Chart.defaults.font.size = 16
+        // CONFIGURAÇÕES GERAIS DE CORES E FONTE
+        Chart.defaults.color = '#105666'
+        Chart.defaults.font.size = 12
         Chart.defaults.font.family = 'sans-serif'
-        Chart.defaults.font.weight = 'bold'
 
         const data = {
             labels: produtos,
             datasets: [{
                 label: 'Volume Financeiro (R$)',  
                 data: valores,
-                fill: true,
-                borderColor: 'white',
-                borderWidth: 4,
-                tension: 0.3
+                backgroundColor: '#0A3323', // Verde escuro para as barras
+                borderColor: '#839958',     // Borda verde suave
+                borderWidth: 1.5,
+                borderRadius: 4
             }]
         }
 
@@ -65,28 +62,42 @@ gerar_grafico.addEventListener('click', () => {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                indexAxis: 'y',
+                indexAxis: 'y', // Gráfico Horizontal
+                layout: {
+                    padding: { right: 80 } // Espaço à direita para o valor R$ não cortar
+                },
                 plugins: {
-                    legend: { display: true },
+                    legend: {
+                        display: true,
+                        labels: { color: '#0A3323', font: { weight: 'bold' } }
+                    },
                     title: {
                         display: true,
-                        text: 'Top 5 - Volume Financeiro de Compras por Mercadoria'
+                        text: 'Top 5 - Volume Financeiro de Compras por Mercadoria',
+                        color: '#0A3323',
+                        font: { size: 15, weight: 'bold' }
                     },
                     datalabels: {
                         display: true,
+                        anchor: 'end',
                         align: 'right',
-                        color: 'white',
-                        font: { weight: 'bold' }
+                        color: '#0A3323', // Cor do valor em R$ do lado da barra
+                        font: { weight: 'bold', size: 11 },
+                        formatter: (val) => 'R$ ' + val.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                     }
                 },
                 scales: {
                     x: {
                         display: true,
-                        title: { display: true, text: 'Valor Financeiro Movimentado (R$)' }
+                        title: { display: true, text: 'Valor Financeiro Movimentado (R$)', color: '#0A3323' },
+                        ticks: { color: '#105666' },
+                        grid: { color: 'rgba(0, 0, 0, 0.05)' }
                     },
                     y: {
                         display: true,
-                        title: { display: true, text: 'Produto / Categoria' }
+                        title: { display: true, text: 'Produto / Categoria', color: '#0A3323' },
+                        ticks: { color: '#105666' },
+                        grid: { display: false }
                     }
                 }
             },

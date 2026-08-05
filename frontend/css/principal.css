@@ -1,0 +1,332 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* BODY */
+body {
+    background-color: #F7F4D5;
+    color: #105666;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* NAVBAR (ALINHAMENTO EM LINHA / LADO A LADO) */
+.navbar, nav {
+    background-color: #0A3323 !important;
+    padding: 15px 25px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 12px rgba(10, 51, 35, 0.15) !important;
+    margin-bottom: 25px !important;
+}
+
+.navbar ul, nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 15px !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.navbar li, nav li {
+    display: inline-block !important;
+    list-style-type: none !important;
+}
+
+.navbar a, nav a {
+    color: #F7F4D5 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+}
+
+.navbar a:hover, nav a:hover {
+    background-color: #839958 !important;
+    color: #ffffff !important;
+}
+
+/* CONTAINERS */
+main {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* TÍTULOS */
+h1, h2, h3 {
+    color: #0A3323;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* BOTÕES */
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #0A3323;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    background-color: #D3968C;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* INPUTS */
+input {
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    width: 100%;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #105666;
+    box-shadow: 0 0 0 3px rgba(16, 86, 102, 0.15);
+}
+
+/* TABELAS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #0A3323;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(247, 244, 213, 0.3);
+}
+
+tr:hover {
+    background-color: rgba(131, 153, 88, 0.1);
+}
+
+td {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.resposta {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: rgba(211, 150, 140, 0.15);
+    border-left: 4px solid #D3968C;
+    color: #105666;
+    font-weight: 500;
+    min-height: 45px; /* Mantém a barrinha visível mesmo sem texto */
+}
+
+/* CONTAINER COM ROLAGEM PARA TABELAS LARGAS */
+.resposta {
+    width: 100%;
+    overflow-x: auto; /* Adiciona barra de rolagem horizontal se a tabela for maior que o card */
+    box-sizing: border-box;
+}
+
+/* ESTILIZAÇÃO E AJUSTE DA TABELA */
+.resposta table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    font-size: 13px;
+}
+
+.resposta th, 
+.resposta td {
+    padding: 10px 8px;
+    text-align: center;
+    word-break: break-word; /* Força quebra de linha em textos/URLs longas */
+    max-width: 180px; /* Impede que uma única coluna fique gigantesca */
+}
+
+/* AJUSTE PARA IMAGENS DENTRO DA TABELA */
+.resposta td img {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* CONTAINER PARA GRÁFICOS DENTRO DO CARD */
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 420px;
+    margin-top: 25px;
+    padding-bottom: 10px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav a {
+        text-align: center;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+
+/* ESTILOS DOS CARDS DA HOME */
+.grid-modulos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.linha-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card-modulo {
+    background-color: #ffffff;
+    border: 1px solid rgba(131, 153, 88, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    width: 240px;
+    text-decoration: none;
+    color: #105666;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(10, 51, 35, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card-modulo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(10, 51, 35, 0.15);
+    border-color: #839958;
+    background-color: rgba(247, 244, 213, 0.2);
+}
+
+.card-modulo h3 {
+    color: #0A3323;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.card-modulo p {
+    font-size: 13px;
+    line-height: 1.4;
+    color: #105666;
+}
+
+/* ESTILIZAÇÃO DOS FORMULÁRIOS E INPUTS/SELECTS */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #105666;
+    background-color: #ffffff;
+    border: 1px solid rgba(131, 153, 88, 0.4);
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+}
+
+/* DESTAQUE AO PASSAR O MOUSE OU CLICAR NO CAMPO */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #0A3323;
+    box-shadow: 0 0 0 3px rgba(10, 51, 35, 0.15);
+}
+
+/* PERSONALIZAÇÃO DAS OPÇÕES INTERNAS DO SELECT */
+select option {
+    background-color: #ffffff;
+    color: #105666;
+    padding: 10px;
+}
+
+/* ESTILIZAÇÃO DO RODAPÉ (FOOTER) */
+footer {
+    width: 100%;
+    background-color: #0A3323;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: 40px;
+    border-top: 3px solid #839958;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 4px 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+footer strong {
+    color: #f7f4d5; /* Amarelo/Creme suave para dar destaque ao nome */
+    font-weight: 600;
+}
+
+/* Garante que o rodapé não fique subindo em telas com pouco conteúdo */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* Força o conteúdo principal a empurrar o footer para baixo */
+}

@@ -11,35 +11,38 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 
     <script src="../../js/relatorio/vw_volume_compras.js" defer></script>
-    <title>Sistema Compras - Volume de Compras</title>
+    <title>Volume de Compras</title>
 </head>
 
 <body>
     <main>
-        <nav>
-            <a href="../../index.html">Principal</a>
-            <li><a href="./vw_produtos_criticos.html">Produtos Críticos</a></li>
-            <li><a href="./vw_volume_compras.html">Volume de Compras</a></li>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../../index.html">Início</a></li>
+                <li><a href="./vw_produtos_criticos.html">Produtos Críticos</a></li>
+                <li><a href="./vw_volume_compras.html">Volume de Compras</a></li>
+            </ul>
         </nav>
 
-        <form>
-            <h1>Listar Volume de Compras</h1>
-        </form>
-
+        <h1>Listar Volume de Compras</h1>
         <br>
 
         <section>
-            <!-- O ID 'gerar_grafico' previne o erro de Uncaught TypeError no JS -->
-            <button id="gerar_grafico">Listar</button>
+            <button type="button" id="gerar_grafico">Listar</button>
         </section>
 
+        <br>
         <div id="resposta" class="resposta"></div>
 
-        <!-- Elemento Canvas onde o gráfico de volume será renderizado -->
-        <div style="position: relative; height:40vh; width:80vw; margin-top: 20px;">
+        <!-- Container do Gráfico com altura fixa e largura responsiva -->
+        <div class="chart-container">
             <canvas id="graf"></canvas>
         </div>
     </main>
+    <footer>
+        <p>&copy;Sistema de Gestão de Compras.</p>
+        <p>Desenvolvido por <strong>Clarice Heitmann</strong> | Email de contato: <strong>clarice_h_santos@estudante.sesisenai.org.br</strong></p>
+    </footer>
 </body>
 
 </html>
