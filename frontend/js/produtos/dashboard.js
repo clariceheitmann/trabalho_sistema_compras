@@ -5,18 +5,18 @@ console.log(container);
 
 fetch('http://localhost:3000/produtos')
 
-.then(res => res.json())
+    .then(res => res.json())
 
-.then(dados => {
-
-
-    container.innerHTML = "";
+    .then(dados => {
 
 
-    dados.forEach(produto => {
+        container.innerHTML = "";
 
 
-        container.innerHTML += `
+        dados.forEach(produto => {
+
+
+            container.innerHTML += `
 
             <div class="card">
 
@@ -48,19 +48,19 @@ fetch('http://localhost:3000/produtos')
         `;
 
 
+        });
+
+
+    })
+
+
+    .catch(err => {
+
+
+        console.error(
+            "Erro ao buscar produtos:",
+            err
+        );
+
+
     });
-
-
-})
-
-
-.catch(err => {
-
-
-    console.error(
-        "Erro ao buscar produtos:",
-        err
-    );
-
-
-});

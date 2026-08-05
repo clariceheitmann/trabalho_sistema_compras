@@ -1,25 +1,25 @@
 let resposta = document.getElementById('resposta')
 let btn_listar = document.getElementById('btn_listar')
 
-btn_listar.addEventListener('click', (e) =>{
+btn_listar.addEventListener('click', (e) => {
     e.preventDefault()
 
     fetch(`http://localhost:3000/produtos`)
-    .then(res => res.json())
-    .then(dados =>{
-        resposta.innerHTML = `
+        .then(res => res.json())
+        .then(dados => {
+            resposta.innerHTML = `
         <table>
             ${thead()}
             ${tbody(dados)}
         </table>`
-    })
-    .catch((err)=>{
-        console.error('Erro ao listar produtos!',err)
-        resposta.innerHTML = `<p>Erro ao listar produtos!</p>`
-    })
+        })
+        .catch((err) => {
+            console.error('Erro ao listar produtos!', err)
+            resposta.innerHTML = `<p>Erro ao listar produtos!</p>`
+        })
 })
 
-function thead(){
+function thead() {
     return `
     <thead>
         <tr>
@@ -36,7 +36,7 @@ function thead(){
     </thead>`
 }
 
-function tbody(dados){
+function tbody(dados) {
     let corpo = '<tbody>'
     dados.forEach(el => {
         corpo += `

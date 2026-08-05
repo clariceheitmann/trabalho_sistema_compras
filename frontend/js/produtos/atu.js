@@ -1,7 +1,7 @@
 let resposta = document.getElementById('resposta')
 let btn_atualizar = document.getElementById('btn_atualizar')
 
-btn_atualizar.addEventListener('click', (e) =>{
+btn_atualizar.addEventListener('click', (e) => {
     e.preventDefault()
 
     const id = Number(document.getElementById('codProduto').value)
@@ -17,35 +17,35 @@ btn_atualizar.addEventListener('click', (e) =>{
         imagem: document.getElementById('imagem').value
     }
 
-    fetch(`http://localhost:3000/produto/${id}`,{
+    fetch(`http://localhost:3000/produto/${id}`, {
         method: 'PUT',
         headers: {
-            'Content-Type' : 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(produtoAtualizado)
     })
-    .then(res => res.json())
-    .then(dados =>{
-        if(dados.message){
-            resposta.innerHTML = `<p>Produto não encontrado</p>`
-            return
-        }
+        .then(res => res.json())
+        .then(dados => {
+            if (dados.message) {
+                resposta.innerHTML = `<p>Produto não encontrado</p>`
+                return
+            }
 
-        resposta.innerHTML = `
+            resposta.innerHTML = `
         <table>
             ${thead()}
             ${tbody([dados])}
         </table>`
 
-        document.querySelector('form').reset()
-    })
-    .catch((err)=>{
-        console.error('Erro ao atualizar produto!',err)
-        resposta.innerHTML = `<p>Erro ao atualizar produto!</p>`
-    })
+            document.querySelector('form').reset()
+        })
+        .catch((err) => {
+            console.error('Erro ao atualizar produto!', err)
+            resposta.innerHTML = `<p>Erro ao atualizar produto!</p>`
+        })
 })
 
-function thead(){
+function thead() {
     return `
     <thead>
         <tr>
@@ -62,7 +62,7 @@ function thead(){
     </thead>`
 }
 
-function tbody(dados){
+function tbody(dados) {
     let corpo = '<tbody>'
     dados.forEach(el => {
         corpo += `

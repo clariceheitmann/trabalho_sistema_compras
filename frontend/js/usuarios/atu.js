@@ -1,7 +1,7 @@
 let resposta = document.getElementById('resposta')
 let btn_atualizar = document.getElementById('btn_atualizar')
 
-btn_atualizar.addEventListener('click', (e) =>{
+btn_atualizar.addEventListener('click', (e) => {
     e.preventDefault()
 
     const codUsuario = Number(document.getElementById('codUsuario').value)
@@ -25,40 +25,40 @@ btn_atualizar.addEventListener('click', (e) =>{
         estado: estado,
     }
 
-    fetch(`http://localhost:3000/usuario/${codUsuario}`,{
+    fetch(`http://localhost:3000/usuario/${codUsuario}`, {
         method: 'PUT',
         headers: {
-            'Content-Type' : 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(usuarioAtualizado)
     })
-    .then(res => res.json())
-    .then(dados =>{
-        resposta.innerHTML = ''
+        .then(res => res.json())
+        .then(dados => {
+            resposta.innerHTML = ''
 
-        if(!dados){
-            resposta.innerHTML = `<p>Usuário não encontrado!</p>`
-            return
-        }
+            if (!dados) {
+                resposta.innerHTML = `<p>Usuário não encontrado!</p>`
+                return
+            }
 
-        let dadosArr = [dados]
+            let dadosArr = [dados]
 
-        resposta.innerHTML += `
+            resposta.innerHTML += `
         <table>
             ${thead()}
             ${tbody(dadosArr)}
         </table>
         `
 
-        document.querySelector('form').reset()
-    })
-    .catch((err)=>{
-        console.error('Erro ao atualizar usuário!',err)
-        resposta.innerHTML = `<p>Erro ao atualizar usuário!</p>`
-    })
+            document.querySelector('form').reset()
+        })
+        .catch((err) => {
+            console.error('Erro ao atualizar usuário!', err)
+            resposta.innerHTML = `<p>Erro ao atualizar usuário!</p>`
+        })
 })
 
-function thead(){
+function thead() {
     let cabecalho = ''
     cabecalho += `
     <thead>
@@ -78,7 +78,7 @@ function thead(){
     return cabecalho
 }
 
-function tbody(dadosArr){
+function tbody(dadosArr) {
     let corpo = ''
     corpo += `<tbody>`
     dadosArr.forEach(el => {

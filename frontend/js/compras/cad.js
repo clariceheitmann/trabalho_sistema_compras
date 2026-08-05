@@ -19,13 +19,13 @@ btn_cadastrar.addEventListener('click', (e) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(compra)
     })
-    .then(res => res.json())
-    .then(dados => {
-        resposta.innerHTML = `<p>Compra registrada com sucesso!</p>`
-        document.querySelector('form').reset()
-    })
-    .catch(err => {
-        console.error(err)
-        resposta.innerHTML = `<p>Erro ao registrar compra!</p>`
-    })
+        .then(res => res.json())
+        .then(dados => {
+            resposta.innerHTML = `<p>Compra registrada com sucesso!</p>`
+            document.querySelector('form').reset()
+        })
+        .catch(err => {
+            console.error(err)
+            resposta.innerHTML = `<p>Erro ao registrar compra!</p>`
+        })
 })

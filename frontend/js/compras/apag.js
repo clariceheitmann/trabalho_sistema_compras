@@ -9,12 +9,12 @@ btn_apagar.addEventListener('click', (e) => {
     fetch(`http://localhost:3000/compra/${id}`, {
         method: 'DELETE'
     })
-    .then(res => res.json())
-    .then(dados => {
-        resposta.innerHTML = `<p>${dados.message}</p>`
-    })
-    .catch(err => {
-        console.error(err)
-        resposta.innerHTML = `<p>Erro ao excluir compra!</p>`
-    })
+        .then(res => res.json())
+        .then(dados => {
+            resposta.innerHTML = `<p>${dados.message}</p>`
+        })
+        .catch(err => {
+            console.error(err)
+            resposta.innerHTML = `<p>Erro ao excluir compra!</p>`
+        })
 })

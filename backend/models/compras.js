@@ -11,7 +11,7 @@ const Compra = db.define('compra', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'usuarios', 
+            model: 'usuarios',
             key: 'codUsuario'
         }
     },
@@ -36,12 +36,12 @@ const Compra = db.define('compra', {
         allowNull: false
     },
     descontoAplicado: {
-        type: DataTypes.DECIMAL(5, 2), // Percentual de desconto (%)
+        type: DataTypes.DECIMAL(5, 2),
         allowNull: true,
         defaultValue: 0.00
     },
     precoFinal: {
-        type: DataTypes.DECIMAL(10, 2), // Valor calculado (Qtde x Preço - Desconto)
+        type: DataTypes.DECIMAL(10, 2),
         allowNull: false
     },
     formaPagamento: {

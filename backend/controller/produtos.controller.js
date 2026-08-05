@@ -1,6 +1,5 @@
 const Produto = require('../models/produtos')
 
-// CREATE
 const cadastrar = async (req, res) => {
     const valores = req.body
 
@@ -17,7 +16,6 @@ const cadastrar = async (req, res) => {
     }
 }
 
-// READ ALL
 const listar = async (req, res) => {
     try {
         const dados = await Produto.findAll()
@@ -28,7 +26,6 @@ const listar = async (req, res) => {
     }
 }
 
-// READ BY ID
 const consultar = async (req, res) => {
     const id = req.params.id
 
@@ -46,7 +43,6 @@ const consultar = async (req, res) => {
     }
 }
 
-// DELETE
 const excluir = async (req, res) => {
     const id = req.params.id
 
@@ -66,7 +62,6 @@ const excluir = async (req, res) => {
     }
 }
 
-// UPDATE
 const atualizar = async (req, res) => {
     const id = req.params.id
     const valores = req.body
@@ -89,7 +84,6 @@ const atualizar = async (req, res) => {
     }
 }
 
-// CARGA EM LOTE
 const cargaLote = async (req, res) => {
     const listaProdutos = req.body
 
@@ -145,4 +139,4 @@ const fetchProdutos = async (req, res) => {
     }
 }
 
-module.exports = {cadastrar, listar, consultar, excluir, atualizar, cargaLote, fetchProdutos}
+module.exports = { cadastrar, listar, consultar, excluir, atualizar, cargaLote, fetchProdutos }

@@ -1,36 +1,36 @@
 let resposta = document.getElementById('resposta')
 let btn_consultar = document.getElementById('btn_consultar')
 
-btn_consultar.addEventListener('click', (e) =>{
+btn_consultar.addEventListener('click', (e) => {
     e.preventDefault()
 
     const codUsuario = document.getElementById('codUsuario').value
 
     fetch(`http://localhost:3000/usuario/${codUsuario}`)
-    .then(res => res.json())
-    .then(dados =>{
-        resposta.innerHTML = ''
+        .then(res => res.json())
+        .then(dados => {
+            resposta.innerHTML = ''
 
-        if(dados.message){
-            resposta.innerHTML += `<p>Usuário não encontrado</p>`
-            return
-        }
+            if (dados.message) {
+                resposta.innerHTML += `<p>Usuário não encontrado</p>`
+                return
+            }
 
-        let dadosArr = [dados]
+            let dadosArr = [dados]
 
-        resposta.innerHTML += `
+            resposta.innerHTML += `
         <table>
             ${thead()}
             ${tbody(dadosArr)}
         </table>`
-    })
-    .catch((err)=>{
-        console.error('Erro ao consultar usuário!',err)
-        resposta.innerHTML = `<p>Erro ao consultar produto!</p>`
-    })
+        })
+        .catch((err) => {
+            console.error('Erro ao consultar usuário!', err)
+            resposta.innerHTML = `<p>Erro ao consultar produto!</p>`
+        })
 })
 
-function thead(){
+function thead() {
     let cabecalho = ''
     cabecalho += `
     <thead>
@@ -50,7 +50,7 @@ function thead(){
     return cabecalho
 }
 
-function tbody(dadosArr){
+function tbody(dadosArr) {
     let corpo = ''
     corpo += `<tbody>`
     dadosArr.forEach(el => {
@@ -60,7 +60,7 @@ function tbody(dadosArr){
         corpo += `<td>${el.sobrenome}</td>`
         corpo += `<td>${el.idade}</td>`
         corpo += `<td>${el.email}</td>`
-         corpo += `<td>${el.telefone}</td>`
+        corpo += `<td>${el.telefone}</td>`
         corpo += `<td>${el.endereco}</td>`
         corpo += `<td>${el.cidade}</td>`
         corpo += `<td>${el.estado}</td>`

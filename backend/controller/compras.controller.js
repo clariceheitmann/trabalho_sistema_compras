@@ -6,38 +6,38 @@ const cadastrar = async (req, res) => {
     const valores = req.body
 
     // Validação estrita usando os campos do enunciado
-    if (!valores.idUsuario || !valores.idProduto || !valores.tipoMovimento || 
-        !valores.quantidadeMovimentada || !valores.formaPagamento || 
+    if (!valores.idUsuario || !valores.idProduto || !valores.tipoMovimento ||
+        !valores.quantidadeMovimentada || !valores.formaPagamento ||
         !valores.statusCompra || !valores.dataCompra) {
         return res.status(400).json({ message: 'Todos os campos obrigatórios devem ser preenchidos!' })
     }
 
     try {
         // 1 - Verificar se o produto existe no banco
-        const produto = await Produto.findByPk(valores.idProduto)        
+        const produto = await Produto.findByPk(valores.idProduto)
         if (!produto) {
             return res.status(404).json({ message: "Produto não encontrado!" })
         }
 
         // 2 - Verificar se o usuário existe no banco
-        const usuario = await Usuario.findByPk(valores.idUsuario)        
+        const usuario = await Usuario.findByPk(valores.idUsuario)
         if (!usuario) {
             return res.status(404).json({ message: "Usuário não encontrado!" })
         }
-        
+
         let novaQuantidade = produto.qtdeEstoque
-        const precoUnit = produto.preco // Recupera o preço atual direto do cadastro do produto
+        const precoUnit = produto.preco
 
         // Lógica de movimentação baseada no estoque atualizado
         if (valores.tipoMovimento === 'ENTRADA') {
             novaQuantidade += valores.quantidadeMovimentada
-        } 
+        }
         else if (valores.tipoMovimento === 'SAIDA') {
             if (produto.qtdeEstoque < valores.quantidadeMovimentada) {
                 return res.status(400).json({ message: "Quantidade insuficiente no estoque!" })
             }
             novaQuantidade -= valores.quantidadeMovimentada
-        } 
+        }
         else {
             return res.status(400).json({ message: "Tipo de Movimentação Inválida! Use ENTRADA ou SAIDA." })
         }
@@ -50,7 +50,7 @@ const cadastrar = async (req, res) => {
 
         // 3 - Atualiza o estoque do produto com a nova quantidade calculada
         await produto.update({ qtdeEstoque: novaQuantidade })
-        
+
         // 4 - Registra a compra na tabela intermediária injetando os valores calculados
         const compra = await Compra.create({
             idUsuario: valores.idUsuario,
@@ -65,15 +65,14 @@ const cadastrar = async (req, res) => {
             dataCompra: valores.dataCompra
         })
 
-        res.status(201).json(compra)        
-        
+        res.status(201).json(compra)
+
     } catch (err) {
         console.error('Erro ao registrar compra:', err)
         res.status(500).json({ message: "Erro ao registrar compra" })
-    }    
+    }
 }
 
-// READ ALL
 const listar = async (req, res) => {
     try {
         const dados = await Compra.findAll()
@@ -84,7 +83,6 @@ const listar = async (req, res) => {
     }
 }
 
-// READ BY ID
 const consultar = async (req, res) => {
     const id = req.params.id
 
@@ -102,7 +100,6 @@ const consultar = async (req, res) => {
     }
 }
 
-// DELETE
 const excluir = async (req, res) => {
     const id = req.params.id
 
@@ -122,7 +119,6 @@ const excluir = async (req, res) => {
     }
 }
 
-// UPDATE
 const atualizar = async (req, res) => {
     const id = req.params.id
     const valores = req.body
@@ -145,5 +141,4 @@ const atualizar = async (req, res) => {
     }
 }
 
-
-module.exports = {cadastrar, listar, consultar, excluir, atualizar}
+module.exports = { cadastrar, listar, consultar, excluir, atualizar }

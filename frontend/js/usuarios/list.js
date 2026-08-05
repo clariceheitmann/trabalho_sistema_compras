@@ -1,27 +1,27 @@
 let resposta = document.getElementById('resposta')
 let btn_listar = document.getElementById('btn_listar')
 
-btn_listar.addEventListener('click', (e) =>{
+btn_listar.addEventListener('click', (e) => {
     e.preventDefault()
 
     fetch(`http://localhost:3000/usuarios`)
-    .then(res => res.json())
-    .then(dados =>{
-        resposta.innerHTML = ''
-        resposta.innerHTML += `
+        .then(res => res.json())
+        .then(dados => {
+            resposta.innerHTML = ''
+            resposta.innerHTML += `
         <table>
             ${thead()}
             ${tbody(dados)}
         </table>
         `
-    })
-    .catch((err)=>{
-        console.error('Erro ao listar usuários!',err)
-        resposta.innerHTML = `<p>Erro ao listar usuários!</p>`
-    })
+        })
+        .catch((err) => {
+            console.error('Erro ao listar usuários!', err)
+            resposta.innerHTML = `<p>Erro ao listar usuários!</p>`
+        })
 })
 
-function thead(){
+function thead() {
     let cabecalho = ''
     cabecalho += `
     <thead>
@@ -41,7 +41,7 @@ function thead(){
     return cabecalho
 }
 
-function tbody(dadosArr){
+function tbody(dadosArr) {
     let corpo = ''
     corpo += `<tbody>`
     dadosArr.forEach(el => {

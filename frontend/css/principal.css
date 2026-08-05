@@ -14,8 +14,9 @@ body {
     min-height: 100vh;
 }
 
-/* NAVBAR (ALINHAMENTO EM LINHA / LADO A LADO) */
-.navbar, nav {
+/* NAVBAR */
+.navbar,
+nav {
     background-color: #0A3323 !important;
     padding: 15px 25px !important;
     border-radius: 10px !important;
@@ -23,7 +24,8 @@ body {
     margin-bottom: 25px !important;
 }
 
-.navbar ul, nav ul {
+.navbar ul,
+nav ul {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
@@ -33,12 +35,14 @@ body {
     padding: 0 !important;
 }
 
-.navbar li, nav li {
+.navbar li,
+nav li {
     display: inline-block !important;
     list-style-type: none !important;
 }
 
-.navbar a, nav a {
+.navbar a,
+nav a {
     color: #F7F4D5 !important;
     text-decoration: none !important;
     font-size: 16px !important;
@@ -49,7 +53,8 @@ body {
     display: inline-block !important;
 }
 
-.navbar a:hover, nav a:hover {
+.navbar a:hover,
+nav a:hover {
     background-color: #839958 !important;
     color: #ffffff !important;
 }
@@ -65,7 +70,9 @@ main {
 }
 
 /* TÍTULOS */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: #0A3323;
     margin-bottom: 20px;
     font-weight: 700;
@@ -81,13 +88,13 @@ button {
     font-weight: 600;
     border-radius: 6px;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
     background-color: #D3968C;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 button:active {
@@ -117,10 +124,11 @@ table {
     margin-top: 20px;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-th, td {
+th,
+td {
     padding: 12px 15px;
     text-align: center;
 }
@@ -151,17 +159,15 @@ td {
     border-left: 4px solid #D3968C;
     color: #105666;
     font-weight: 500;
-    min-height: 45px; /* Mantém a barrinha visível mesmo sem texto */
+    min-height: 45px;
 }
 
-/* CONTAINER COM ROLAGEM PARA TABELAS LARGAS */
 .resposta {
     width: 100%;
-    overflow-x: auto; /* Adiciona barra de rolagem horizontal se a tabela for maior que o card */
+    overflow-x: auto;
     box-sizing: border-box;
 }
 
-/* ESTILIZAÇÃO E AJUSTE DA TABELA */
 .resposta table {
     width: 100%;
     max-width: 100%;
@@ -170,15 +176,14 @@ td {
     font-size: 13px;
 }
 
-.resposta th, 
+.resposta th,
 .resposta td {
     padding: 10px 8px;
     text-align: center;
-    word-break: break-word; /* Força quebra de linha em textos/URLs longas */
-    max-width: 180px; /* Impede que uma única coluna fique gigantesca */
+    word-break: break-word;
+    max-width: 180px;
 }
 
-/* AJUSTE PARA IMAGENS DENTRO DA TABELA */
 .resposta td img {
     max-width: 50px;
     max-height: 50px;
@@ -186,7 +191,7 @@ td {
     border-radius: 4px;
 }
 
-/* CONTAINER PARA GRÁFICOS DENTRO DO CARD */
+/* GRÁFICOS */
 .chart-container {
     position: relative;
     width: 100%;
@@ -281,7 +286,6 @@ select {
     cursor: pointer;
 }
 
-/* DESTAQUE AO PASSAR O MOUSE OU CLICAR NO CAMPO */
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="date"]:focus,
@@ -290,14 +294,13 @@ select:focus {
     box-shadow: 0 0 0 3px rgba(10, 51, 35, 0.15);
 }
 
-/* PERSONALIZAÇÃO DAS OPÇÕES INTERNAS DO SELECT */
 select option {
     background-color: #ffffff;
     color: #105666;
     padding: 10px;
 }
 
-/* ESTILIZAÇÃO DO RODAPÉ (FOOTER) */
+/* FOOTER */
 footer {
     width: 100%;
     background-color: #0A3323;
@@ -316,11 +319,10 @@ footer p {
 }
 
 footer strong {
-    color: #f7f4d5; /* Amarelo/Creme suave para dar destaque ao nome */
+    color: #f7f4d5;
     font-weight: 600;
 }
 
-/* Garante que o rodapé não fique subindo em telas com pouco conteúdo */
 body {
     display: flex;
     flex-direction: column;
@@ -328,5 +330,5 @@ body {
 }
 
 main {
-    flex: 1; /* Força o conteúdo principal a empurrar o footer para baixo */
+    flex: 1;
 }

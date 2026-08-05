@@ -10,25 +10,25 @@ btn_carga_lote.addEventListener('click', (e) => {
 
     // 1. Consome os dados da API pública externa de usuários
     fetch('https://dummyjson.com/users')
-    .then(res => res.json())
-    .then(dadosExternos => {
-        resposta.innerHTML = '<p style="color: cyan;">Dados recebidos com sucesso! Transmitindo lote para o back-end...</p>'
-        
-        // 2. Repassa o array bruto (.users) diretamente ao endpoint de carga em lote
-        return fetch('http://localhost:3000/usuarios/carga-lote', {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json' 
-            },
-            body: JSON.stringify(dadosExternos.users)
+        .then(res => res.json())
+        .then(dadosExternos => {
+            resposta.innerHTML = '<p style="color: cyan;">Dados recebidos com sucesso! Transmitindo lote para o back-end...</p>'
+
+            // 2. Repassa o array bruto (.users) diretamente ao endpoint de carga em lote
+            return fetch('http://localhost:3000/usuarios/carga-lote', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dadosExternos.users)
+            })
         })
-    })
-    .then(res => res.json())
-    .then(dados => {
-        resposta.innerHTML = `<p style="color: lightgreen;">${dados.message || 'Carga em lote finalizada com sucesso!'}</p>`
-    })
-    .catch(err => {
-        console.error('Erro na carga em lote:', err)
-        resposta.innerHTML = '<p style="color: red;">Falha ao processar os dados da carga em lote no servidor local.</p>'
-    })
+        .then(res => res.json())
+        .then(dados => {
+            resposta.innerHTML = `<p style="color: lightgreen;">${dados.message || 'Carga em lote finalizada com sucesso!'}</p>`
+        })
+        .catch(err => {
+            console.error('Erro na carga em lote:', err)
+            resposta.innerHTML = '<p style="color: red;">Falha ao processar os dados da carga em lote no servidor local.</p>'
+        })
 })

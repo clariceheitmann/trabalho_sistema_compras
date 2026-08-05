@@ -1,32 +1,32 @@
 let resposta = document.getElementById('resposta')
 let btn_consultar = document.getElementById('btn_consultar')
 
-btn_consultar.addEventListener('click', (e) =>{
+btn_consultar.addEventListener('click', (e) => {
     e.preventDefault()
 
     const id = document.getElementById('codProduto').value
 
     fetch(`http://localhost:3000/produto/${id}`)
-    .then(res => res.json())
-    .then(dados =>{
-        if(dados.message){
-            resposta.innerHTML = `<p>Produto não encontrado</p>`
-            return
-        }
+        .then(res => res.json())
+        .then(dados => {
+            if (dados.message) {
+                resposta.innerHTML = `<p>Produto não encontrado</p>`
+                return
+            }
 
-        resposta.innerHTML = `
+            resposta.innerHTML = `
         <table>
             ${thead()}
             ${tbody([dados])}
         </table>`
-    })
-    .catch((err)=>{
-        console.error('Erro ao consultar produto!',err)
-        resposta.innerHTML = `<p>Erro ao consultar produto!</p>`
-    })
+        })
+        .catch((err) => {
+            console.error('Erro ao consultar produto!', err)
+            resposta.innerHTML = `<p>Erro ao consultar produto!</p>`
+        })
 })
 
-function thead(){
+function thead() {
     return `
     <thead>
         <tr>
@@ -43,7 +43,7 @@ function thead(){
     </thead>`
 }
 
-function tbody(dados){
+function tbody(dados) {
     let corpo = '<tbody>'
     dados.forEach(el => {
         corpo += `

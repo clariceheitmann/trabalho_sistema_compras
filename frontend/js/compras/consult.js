@@ -1,36 +1,36 @@
 let resposta = document.getElementById('resposta')
 let btn_consultar = document.getElementById('btn_consultar')
 
-btn_consultar.addEventListener('click', (e) =>{
+btn_consultar.addEventListener('click', (e) => {
     e.preventDefault()
 
     const codCompra = document.getElementById('codCompra').value
 
     fetch(`http://localhost:3000/compra/${codCompra}`)
-    .then(res => res.json())
-    .then(dados =>{
-        resposta.innerHTML = ''
+        .then(res => res.json())
+        .then(dados => {
+            resposta.innerHTML = ''
 
-        if(dados.message){
-            resposta.innerHTML += `<p>Compra não encontrada</p>`
-            return
-        }
+            if (dados.message) {
+                resposta.innerHTML += `<p>Compra não encontrada</p>`
+                return
+            }
 
-        let dadosArr = [dados]
+            let dadosArr = [dados]
 
-        resposta.innerHTML += `
+            resposta.innerHTML += `
         <table>
             ${thead()}
             ${tbody(dadosArr)}
         </table>`
-    })
-    .catch((err)=>{
-        console.error('Erro ao consultar compra!',err)
-        resposta.innerHTML = `<p>Erro ao consultar compra!</p>`
-    })
+        })
+        .catch((err) => {
+            console.error('Erro ao consultar compra!', err)
+            resposta.innerHTML = `<p>Erro ao consultar compra!</p>`
+        })
 })
 
-function thead(){
+function thead() {
     let cabecalho = ''
     cabecalho += `
     <thead>
@@ -52,7 +52,7 @@ function thead(){
     return cabecalho
 }
 
-function tbody(dadosArr){
+function tbody(dadosArr) {
     let corpo = ''
     corpo += `<tbody>`
     dadosArr.forEach(el => {

@@ -4,7 +4,7 @@ const db = require('../db/conn')
 const VwVolumeCompras = db.define('VwTotalCategoria', {
     nome: {
         type: DataTypes.STRING(100),
-        primaryKey: true 
+        primaryKey: true
     },
     quantidade_total_movimentada: {
         type: DataTypes.INTEGER

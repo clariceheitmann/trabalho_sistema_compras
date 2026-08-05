@@ -5,21 +5,21 @@ btn_listar.addEventListener('click', (e) => {
     e.preventDefault()
 
     fetch('http://localhost:3000/compras')
-    .then(res => res.json())
-    .then(dados => {
-        resposta.innerHTML = `
+        .then(res => res.json())
+        .then(dados => {
+            resposta.innerHTML = `
         <table>
             ${thead()}
             ${tbody(dados)}
         </table>`
-    })
-    .catch(err => {
-        console.error(err)
-        resposta.innerHTML = `<p>Erro ao listar compras!</p>`
-    })
+        })
+        .catch(err => {
+            console.error(err)
+            resposta.innerHTML = `<p>Erro ao listar compras!</p>`
+        })
 })
 
-function thead(){
+function thead() {
     return `
     <thead>
         <tr>
@@ -38,7 +38,7 @@ function thead(){
     </thead>`
 }
 
-function tbody(dados){
+function tbody(dados) {
     let linhas = `<tbody>`
     dados.forEach(el => {
         linhas += `

@@ -1,7 +1,7 @@
 let resposta = document.getElementById('resposta')
 let btn_cadastrar = document.getElementById('btn_cadastrar')
 
-btn_cadastrar.addEventListener('click', (e) =>{
+btn_cadastrar.addEventListener('click', (e) => {
     e.preventDefault()
 
     const nome = document.getElementById('nome').value
@@ -24,23 +24,23 @@ btn_cadastrar.addEventListener('click', (e) =>{
         estado: estado,
     }
 
-    fetch(`http://localhost:3000/usuario`,{
+    fetch(`http://localhost:3000/usuario`, {
         method: 'POST',
         headers: {
-            'Content-Type' : 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(usuario)
     })
-    .then(res => res.json())
-    .then(dados =>{
-        resposta.innerHTML = ''
-        resposta.innerHTML = `<p>${dados.message}</p>`
-       
-        document.querySelector('form').reset()
-    })
-    .catch((err)=>{
-        console.error('Erro ao cadastrar usuário!',err)
-        resposta.innerHTML = '<p>Erro ao cadastrar usuário!</p>'
-    })
+        .then(res => res.json())
+        .then(dados => {
+            resposta.innerHTML = ''
+            resposta.innerHTML = `<p>${dados.message}</p>`
+
+            document.querySelector('form').reset()
+        })
+        .catch((err) => {
+            console.error('Erro ao cadastrar usuário!', err)
+            resposta.innerHTML = '<p>Erro ao cadastrar usuário!</p>'
+        })
 })
 
