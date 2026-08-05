@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/principal.css">
+
+    <!-- CDN do Chart.js e Plugin DataLabels -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
     <script src="../../js/relatorio/vw_produtos_criticos.js" defer></script>
     <title>Sistema compras</title>
 </head>
@@ -24,10 +29,16 @@
         <br>
 
         <section>
-            <button id="btn_listar">Listar</button>
+            <!-- ID ajustado para bater com o JavaScript -->
+            <button id="gerar_grafico">Listar</button>
         </section>
 
         <div id="resposta" class="resposta"></div>
+
+        <!-- Canvas necessário para o Chart.js desenhar o gráfico -->
+        <div style="position: relative; height:40vh; width:80vw">
+            <canvas id="graf"></canvas>
+        </div>
     </main>
 </body>
 

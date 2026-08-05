@@ -3,7 +3,7 @@ let gerar_grafico = document.getElementById('gerar_grafico')
 let meuGrafico = null
 
 gerar_grafico.addEventListener('click', () => {
-    fetch('http://localhost:3000/relatorio/volume-compras')
+    fetch('http://localhost:3000/volumeCompras')
     .then(res => res.json())
     .then(dados => {
         console.log("=========================================")

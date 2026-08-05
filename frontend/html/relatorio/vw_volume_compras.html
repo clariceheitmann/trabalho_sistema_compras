@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/principal.css">
+
+    <!-- CDNs necessários para renderizar os gráficos com Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
     <script src="../../js/relatorio/vw_volume_compras.js" defer></script>
-    <title>Sistema compras</title>
+    <title>Sistema Compras - Volume de Compras</title>
 </head>
 
 <body>
@@ -24,10 +29,16 @@
         <br>
 
         <section>
-            <button id="btn_listar">Listar</button>
+            <!-- O ID 'gerar_grafico' previne o erro de Uncaught TypeError no JS -->
+            <button id="gerar_grafico">Listar</button>
         </section>
 
         <div id="resposta" class="resposta"></div>
+
+        <!-- Elemento Canvas onde o gráfico de volume será renderizado -->
+        <div style="position: relative; height:40vh; width:80vw; margin-top: 20px;">
+            <canvas id="graf"></canvas>
+        </div>
     </main>
 </body>
 
